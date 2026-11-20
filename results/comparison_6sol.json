@@ -1,0 +1,427 @@
+{
+  "summaries": {
+    "baseline_full": {
+      "name": "Vanilla Full-Context",
+      "total": 120,
+      "correct": 117,
+      "accuracy": 0.975,
+      "cost_cny": 1.252674,
+      "avg_latency_sec": 5.02,
+      "prompt_tokens": 3614033,
+      "completion_tokens": 12331,
+      "by_type": {
+        "comprehension_and_reasoning": {
+          "n": 20,
+          "ok": 19,
+          "acc": 0.95,
+          "api_err": 0,
+          "empty_or_unparsed": 0,
+          "wrong_choice": 1,
+          "cost_cny": 0.255467,
+          "avg_latency_sec": 5.54
+        },
+        "computation": {
+          "n": 20,
+          "ok": 18,
+          "acc": 0.9,
+          "api_err": 0,
+          "empty_or_unparsed": 0,
+          "wrong_choice": 2,
+          "cost_cny": 0.209607,
+          "avg_latency_sec": 5.33
+        },
+        "multiple_information_retrieval": {
+          "n": 20,
+          "ok": 20,
+          "acc": 1.0,
+          "api_err": 0,
+          "empty_or_unparsed": 0,
+          "wrong_choice": 0,
+          "cost_cny": 0.22548,
+          "avg_latency_sec": 4.97
+        },
+        "passage_retrieval": {
+          "n": 20,
+          "ok": 20,
+          "acc": 1.0,
+          "api_err": 0,
+          "empty_or_unparsed": 0,
+          "wrong_choice": 0,
+          "cost_cny": 0.104576,
+          "avg_latency_sec": 4.38
+        },
+        "shortdep_qa": {
+          "n": 20,
+          "ok": 20,
+          "acc": 1.0,
+          "api_err": 0,
+          "empty_or_unparsed": 0,
+          "wrong_choice": 0,
+          "cost_cny": 0.214373,
+          "avg_latency_sec": 4.97
+        },
+        "timeline_reorder": {
+          "n": 20,
+          "ok": 20,
+          "acc": 1.0,
+          "api_err": 0,
+          "empty_or_unparsed": 0,
+          "wrong_choice": 0,
+          "cost_cny": 0.243172,
+          "avg_latency_sec": 4.91
+        }
+      }
+    },
+    "baseline_trunc36k": {
+      "name": "Vanilla Truncated-36K (example.py window)",
+      "total": 120,
+      "correct": 106,
+      "accuracy": 0.8833,
+      "cost_cny": 0.571618,
+      "avg_latency_sec": 4.43,
+      "prompt_tokens": 1694148,
+      "completion_tokens": 12271,
+      "by_type": {
+        "comprehension_and_reasoning": {
+          "n": 20,
+          "ok": 16,
+          "acc": 0.8,
+          "api_err": 0,
+          "empty_or_unparsed": 0,
+          "wrong_choice": 4,
+          "cost_cny": 0.101814,
+          "avg_latency_sec": 4.09
+        },
+        "computation": {
+          "n": 20,
+          "ok": 17,
+          "acc": 0.85,
+          "api_err": 0,
+          "empty_or_unparsed": 0,
+          "wrong_choice": 3,
+          "cost_cny": 0.101106,
+          "avg_latency_sec": 4.68
+        },
+        "multiple_information_retrieval": {
+          "n": 20,
+          "ok": 18,
+          "acc": 0.9,
+          "api_err": 0,
+          "empty_or_unparsed": 0,
+          "wrong_choice": 2,
+          "cost_cny": 0.10156,
+          "avg_latency_sec": 4.64
+        },
+        "passage_retrieval": {
+          "n": 20,
+          "ok": 17,
+          "acc": 0.85,
+          "api_err": 0,
+          "empty_or_unparsed": 0,
+          "wrong_choice": 3,
+          "cost_cny": 0.064585,
+          "avg_latency_sec": 3.99
+        },
+        "shortdep_qa": {
+          "n": 20,
+          "ok": 20,
+          "acc": 1.0,
+          "api_err": 0,
+          "empty_or_unparsed": 0,
+          "wrong_choice": 0,
+          "cost_cny": 0.101148,
+          "avg_latency_sec": 4.43
+        },
+        "timeline_reorder": {
+          "n": 20,
+          "ok": 18,
+          "acc": 0.9,
+          "api_err": 0,
+          "empty_or_unparsed": 0,
+          "wrong_choice": 2,
+          "cost_cny": 0.101405,
+          "avg_latency_sec": 4.74
+        }
+      }
+    },
+    "improved_flow": {
+      "name": "Flow-Orchestrated Map-Reduce + Verify",
+      "total": 120,
+      "correct": 116,
+      "accuracy": 0.9667,
+      "cost_cny": 2.309083,
+      "avg_latency_sec": 28.86,
+      "prompt_tokens": 6337415,
+      "completion_tokens": 96022,
+      "by_type": {
+        "comprehension_and_reasoning": {
+          "n": 20,
+          "ok": 19,
+          "acc": 0.95,
+          "api_err": 0,
+          "empty_or_unparsed": 0,
+          "wrong_choice": 1,
+          "cost_cny": 0.493883,
+          "avg_latency_sec": 35.2
+        },
+        "computation": {
+          "n": 20,
+          "ok": 18,
+          "acc": 0.9,
+          "api_err": 0,
+          "empty_or_unparsed": 1,
+          "wrong_choice": 1,
+          "cost_cny": 0.3943,
+          "avg_latency_sec": 27.8
+        },
+        "multiple_information_retrieval": {
+          "n": 20,
+          "ok": 20,
+          "acc": 1.0,
+          "api_err": 0,
+          "empty_or_unparsed": 0,
+          "wrong_choice": 0,
+          "cost_cny": 0.426203,
+          "avg_latency_sec": 28.19
+        },
+        "passage_retrieval": {
+          "n": 20,
+          "ok": 20,
+          "acc": 1.0,
+          "api_err": 0,
+          "empty_or_unparsed": 0,
+          "wrong_choice": 0,
+          "cost_cny": 0.152161,
+          "avg_latency_sec": 10.47
+        },
+        "shortdep_qa": {
+          "n": 20,
+          "ok": 20,
+          "acc": 1.0,
+          "api_err": 0,
+          "empty_or_unparsed": 0,
+          "wrong_choice": 0,
+          "cost_cny": 0.387206,
+          "avg_latency_sec": 26.03
+        },
+        "timeline_reorder": {
+          "n": 20,
+          "ok": 19,
+          "acc": 0.95,
+          "api_err": 0,
+          "empty_or_unparsed": 0,
+          "wrong_choice": 1,
+          "cost_cny": 0.45533,
+          "avg_latency_sec": 45.47
+        }
+      }
+    }
+  },
+  "paired_improved_vs_full": {
+    "common_items": 120,
+    "both_ok": 115,
+    "improved_fixed": 1,
+    "regressed": 2,
+    "both_fail": 2,
+    "net_gain": -1,
+    "by_task_flips": {
+      "comprehension_and_reasoning": {
+        "fixed": 0,
+        "regressed": 0,
+        "total": 20
+      },
+      "computation": {
+        "fixed": 1,
+        "regressed": 1,
+        "total": 20
+      },
+      "multiple_information_retrieval": {
+        "fixed": 0,
+        "regressed": 0,
+        "total": 20
+      },
+      "passage_retrieval": {
+        "fixed": 0,
+        "regressed": 0,
+        "total": 20
+      },
+      "shortdep_qa": {
+        "fixed": 0,
+        "regressed": 0,
+        "total": 20
+      },
+      "timeline_reorder": {
+        "fixed": 0,
+        "regressed": 1,
+        "total": 20
+      }
+    },
+    "fixed_examples": [
+      {
+        "id": "925",
+        "type": "computation",
+        "base_err": "json",
+        "base_pred": "A",
+        "gold": "C"
+      }
+    ],
+    "regressed_examples": [
+      {
+        "id": "805",
+        "type": "timeline_reorder",
+        "imp_err": "json",
+        "imp_pred": "D",
+        "gold": "B"
+      },
+      {
+        "id": "861",
+        "type": "computation",
+        "imp_err": "unparseable",
+        "imp_pred": null,
+        "gold": "D"
+      }
+    ]
+  },
+  "paired_improved_vs_trunc36k": {
+    "common_items": 120,
+    "both_ok": 104,
+    "improved_fixed": 12,
+    "regressed": 2,
+    "both_fail": 2,
+    "net_gain": 10,
+    "by_task_flips": {
+      "comprehension_and_reasoning": {
+        "fixed": 3,
+        "regressed": 0,
+        "total": 20
+      },
+      "computation": {
+        "fixed": 3,
+        "regressed": 2,
+        "total": 20
+      },
+      "multiple_information_retrieval": {
+        "fixed": 2,
+        "regressed": 0,
+        "total": 20
+      },
+      "passage_retrieval": {
+        "fixed": 3,
+        "regressed": 0,
+        "total": 20
+      },
+      "shortdep_qa": {
+        "fixed": 0,
+        "regressed": 0,
+        "total": 20
+      },
+      "timeline_reorder": {
+        "fixed": 1,
+        "regressed": 0,
+        "total": 20
+      }
+    },
+    "fixed_examples": [
+      {
+        "id": "1168",
+        "type": "passage_retrieval",
+        "base_err": "json",
+        "base_pred": "C",
+        "gold": "D"
+      },
+      {
+        "id": "1212",
+        "type": "passage_retrieval",
+        "base_err": "json",
+        "base_pred": "B",
+        "gold": "D"
+      },
+      {
+        "id": "1244",
+        "type": "passage_retrieval",
+        "base_err": "json",
+        "base_pred": "A",
+        "gold": "D"
+      },
+      {
+        "id": "166",
+        "type": "comprehension_and_reasoning",
+        "base_err": "json",
+        "base_pred": "B",
+        "gold": "C"
+      },
+      {
+        "id": "215",
+        "type": "comprehension_and_reasoning",
+        "base_err": "json",
+        "base_pred": "D",
+        "gold": "C"
+      },
+      {
+        "id": "278",
+        "type": "comprehension_and_reasoning",
+        "base_err": "json",
+        "base_pred": "A",
+        "gold": "D"
+      },
+      {
+        "id": "530",
+        "type": "multiple_information_retrieval",
+        "base_err": "json",
+        "base_pred": "A",
+        "gold": "C"
+      },
+      {
+        "id": "575",
+        "type": "multiple_information_retrieval",
+        "base_err": "json",
+        "base_pred": "D",
+        "gold": "B"
+      },
+      {
+        "id": "812",
+        "type": "timeline_reorder",
+        "base_err": "json",
+        "base_pred": "C",
+        "gold": "A"
+      },
+      {
+        "id": "905",
+        "type": "computation",
+        "base_err": "json",
+        "base_pred": "B",
+        "gold": "A"
+      },
+      {
+        "id": "925",
+        "type": "computation",
+        "base_err": "json",
+        "base_pred": "A",
+        "gold": "C"
+      },
+      {
+        "id": "937",
+        "type": "computation",
+        "base_err": "json",
+        "base_pred": "C",
+        "gold": "A"
+      }
+    ],
+    "regressed_examples": [
+      {
+        "id": "861",
+        "type": "computation",
+        "imp_err": "unparseable",
+        "imp_pred": null,
+        "gold": "D"
+      },
+      {
+        "id": "923",
+        "type": "computation",
+        "imp_err": "json",
+        "imp_pred": "A",
+        "gold": "B"
+      }
+    ]
+  }
+}

@@ -1,0 +1,131 @@
+{
+  "total": 120,
+  "correct": 117,
+  "failed": 3,
+  "accuracy": 0.975,
+  "failure_categories": {
+    "E6_CROSS_TEXT_COUNTING_CALC_ERROR": {
+      "count": 2,
+      "pct_of_failures": 0.6667,
+      "pct_of_total": 0.0167
+    },
+    "E7_MULTI_HOP_EVIDENCE_OMISSION": {
+      "count": 1,
+      "pct_of_failures": 0.3333,
+      "pct_of_total": 0.0083
+    }
+  },
+  "failure_by_task": {
+    "comprehension_and_reasoning": {
+      "E7_MULTI_HOP_EVIDENCE_OMISSION": 1
+    },
+    "computation": {
+      "E6_CROSS_TEXT_COUNTING_CALC_ERROR": 2
+    }
+  },
+  "accuracy_by_length": {
+    "<60k": {
+      "correct": 22,
+      "total": 22,
+      "accuracy": 1.0
+    },
+    "60k-100k": {
+      "correct": 41,
+      "total": 42,
+      "accuracy": 0.9762
+    },
+    "100k-150k": {
+      "correct": 38,
+      "total": 39,
+      "accuracy": 0.9744
+    },
+    ">=150k": {
+      "correct": 16,
+      "total": 17,
+      "accuracy": 0.9412
+    }
+  },
+  "accuracy_by_evidence_position": {
+    "head(0-0.33)": {
+      "correct": 35,
+      "total": 35,
+      "accuracy": 1.0
+    },
+    "mid(0.33-0.67)": {
+      "correct": 42,
+      "total": 44,
+      "accuracy": 0.9545
+    },
+    "tail(0.67-1.0)": {
+      "correct": 18,
+      "total": 19,
+      "accuracy": 0.9474
+    }
+  },
+  "representative_examples": {
+    "E7_MULTI_HOP_EVIDENCE_OMISSION": [
+      {
+        "id": "135",
+        "type": "comprehension_and_reasoning",
+        "context_chars": 88909,
+        "question": "Why is the ship doctor unwilling to go to the missing ship? Does this foreshadow discovering something horrible?",
+        "options": {
+          "A": "The ship doctor is afraid of the dark and unknown, and does not want to explore the deserted ship.",
+          "B": "The ship doctor is worried about being infected by a potential disease on the missing ship, thus avoiding it for personal safety.",
+          "C": "The ship doctor has a premonition of danger and feels an inexplicable sense of dread about going to the missing ship.",
+          "D": "A sign that something terrible may be discovered leading to death."
+        },
+        "gold_option": "D",
+        "pred_option": "B",
+        "detail": "pred=B gold=D, ev_count=5, ev_pos=[0.741, 0.698, 0.746, 0.181, 0.68]",
+        "evidence": [
+          "Fuck me. They sell our ships and this is what they staff them with? .... I... I'm just saying. We have no idea what's awaiting us, and--",
+          "From their reactions, we can tell that not one of them is keen on setting a foot on the Prometheus."
+        ],
+        "raw_response": "{\"option\":\"B\"}"
+      }
+    ],
+    "E6_CROSS_TEXT_COUNTING_CALC_ERROR": [
+      {
+        "id": "925",
+        "type": "computation",
+        "context_chars": 222894,
+        "question": "How many years did Elvis perform at the International Hotel in Las Vegas?",
+        "options": {
+          "A": "7 years",
+          "B": "3 years",
+          "C": "5 years",
+          "D": "10 years"
+        },
+        "gold_option": "C",
+        "pred_option": "A",
+        "detail": "pred=A gold=C, ev_pos=[0.756]",
+        "evidence": [
+          "\"Now yours and Mr Hulett’s international tour can’t be nothing less than great. Nothing less than Elvis Presley.\"",
+          "\"SUPERIMPOSED IMAGES: The International sign: 'WELCOME BACK FOR YOUR FIFTH YEAR'.\""
+        ],
+        "raw_response": "{\"option\":\"A\"}"
+      },
+      {
+        "id": "923",
+        "type": "computation",
+        "context_chars": 134790,
+        "question": "How many years pass between when Le Griffon originally vanished and when Madeline Craig washes ashore?",
+        "options": {
+          "A": "Approximately 25 years.",
+          "B": "Approximately 20 years.",
+          "C": "Approximately 15 years.",
+          "D": "Approximately 10 years."
+        },
+        "gold_option": "B",
+        "pred_option": "A",
+        "detail": "pred=A gold=B, ev_pos=[0.689, 0.581]",
+        "evidence": [
+          "The boat vanished in 1679 —",
+          "Craigshaven was founded under the most peculiar of circumstance in the late 17th century."
+        ],
+        "raw_response": "{\"option\":\"A\"}"
+      }
+    ]
+  }
+}

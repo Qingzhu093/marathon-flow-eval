@@ -1,0 +1,67 @@
+{
+  "total": 10,
+  "correct": 7,
+  "accuracy": 0.7,
+  "total_cost_cny": 0.080643,
+  "parse_methods": {
+    "json": 7,
+    "empty": 1
+  },
+  "by_type": {
+    "comprehension_and_reasoning": {
+      "total": 2,
+      "correct": 2,
+      "accuracy": 1.0,
+      "api_fail": 0,
+      "parse_fail": 0,
+      "avg_latency_sec": 49.42,
+      "prompt_tokens": 98020,
+      "completion_tokens": 1024,
+      "cost_cny": 0.026363
+    },
+    "computation": {
+      "total": 2,
+      "correct": 2,
+      "accuracy": 1.0,
+      "api_fail": 0,
+      "parse_fail": 0,
+      "avg_latency_sec": 35.91,
+      "prompt_tokens": 36600,
+      "completion_tokens": 695,
+      "cost_cny": 0.010243
+    },
+    "multiple_information_retrieval": {
+      "total": 2,
+      "correct": 0,
+      "accuracy": 0.0,
+      "api_fail": 1,
+      "parse_fail": 1,
+      "avg_latency_sec": 33.99,
+      "prompt_tokens": 58501,
+      "completion_tokens": 2048,
+      "cost_cny": 0.01757
+    },
+    "shortdep_qa": {
+      "total": 2,
+      "correct": 2,
+      "accuracy": 1.0,
+      "api_fail": 0,
+      "parse_fail": 0,
+      "avg_latency_sec": 51.92,
+      "prompt_tokens": 47979,
+      "completion_tokens": 728,
+      "cost_cny": 0.013194
+    },
+    "timeline_reorder": {
+      "total": 2,
+      "correct": 1,
+      "accuracy": 0.5,
+      "api_fail": 1,
+      "parse_fail": 0,
+      "avg_latency_sec": 68.17,
+      "prompt_tokens": 49370,
+      "completion_tokens": 512,
+      "cost_cny": 0.013273
+    }
+  }
+}

@@ -1,0 +1,251 @@
+{
+  "total": 120,
+  "correct": 105,
+  "failed": 15,
+  "accuracy": 0.875,
+  "failure_categories": {
+    "E1_API_TIMEOUT_OR_NET": {
+      "count": 9,
+      "pct_of_failures": 0.6,
+      "pct_of_total": 0.075
+    },
+    "E2_HIDDEN_TOOL_CALL_HIJACK": {
+      "count": 4,
+      "pct_of_failures": 0.2667,
+      "pct_of_total": 0.0333
+    },
+    "E3_THINKING_BUDGET_EXHAUSTION": {
+      "count": 2,
+      "pct_of_failures": 0.1333,
+      "pct_of_total": 0.0167
+    }
+  },
+  "failure_by_task": {
+    "comprehension_and_reasoning": {
+      "E2_HIDDEN_TOOL_CALL_HIJACK": 1,
+      "E1_API_TIMEOUT_OR_NET": 4
+    },
+    "computation": {
+      "E2_HIDDEN_TOOL_CALL_HIJACK": 1
+    },
+    "multiple_information_retrieval": {
+      "E3_THINKING_BUDGET_EXHAUSTION": 1,
+      "E2_HIDDEN_TOOL_CALL_HIJACK": 1,
+      "E1_API_TIMEOUT_OR_NET": 2
+    },
+    "passage_retrieval": {
+      "E1_API_TIMEOUT_OR_NET": 3
+    },
+    "timeline_reorder": {
+      "E2_HIDDEN_TOOL_CALL_HIJACK": 1,
+      "E3_THINKING_BUDGET_EXHAUSTION": 1
+    }
+  },
+  "accuracy_by_length": {
+    "<60k": {
+      "correct": 19,
+      "total": 22,
+      "accuracy": 0.8636
+    },
+    "60k-100k": {
+      "correct": 37,
+      "total": 42,
+      "accuracy": 0.881
+    },
+    "100k-150k": {
+      "correct": 34,
+      "total": 39,
+      "accuracy": 0.8718
+    },
+    ">=150k": {
+      "correct": 15,
+      "total": 17,
+      "accuracy": 0.8824
+    }
+  },
+  "accuracy_by_evidence_position": {
+    "head(0-0.33)": {
+      "correct": 31,
+      "total": 35,
+      "accuracy": 0.8857
+    },
+    "mid(0.33-0.67)": {
+      "correct": 36,
+      "total": 44,
+      "accuracy": 0.8182
+    },
+    "tail(0.67-1.0)": {
+      "correct": 18,
+      "total": 19,
+      "accuracy": 0.9474
+    }
+  },
+  "representative_examples": {
+    "E2_HIDDEN_TOOL_CALL_HIJACK": [
+      {
+        "id": "135",
+        "type": "comprehension_and_reasoning",
+        "context_chars": 88909,
+        "question": "Why is the ship doctor unwilling to go to the missing ship? Does this foreshadow discovering something horrible?",
+        "options": {
+          "A": "The ship doctor is afraid of the dark and unknown, and does not want to explore the deserted ship.",
+          "B": "The ship doctor is worried about being infected by a potential disease on the missing ship, thus avoiding it for personal safety.",
+          "C": "The ship doctor has a premonition of danger and feels an inexplicable sense of dread about going to the missing ship.",
+          "D": "A sign that something terrible may be discovered leading to death."
+        },
+        "gold_option": "D",
+        "pred_option": null,
+        "detail": "finish_reason=tool_calls without client tools, completion_tokens=3072",
+        "evidence": [
+          "Fuck me. They sell our ships and this is what they staff them with? .... I... I'm just saying. We have no idea what's awaiting us, and--",
+          "From their reactions, we can tell that not one of them is keen on setting a foot on the Prometheus."
+        ],
+        "raw_response": ""
+      },
+      {
+        "id": "923",
+        "type": "computation",
+        "context_chars": 134790,
+        "question": "How many years pass between when Le Griffon originally vanished and when Madeline Craig washes ashore?",
+        "options": {
+          "A": "Approximately 25 years.",
+          "B": "Approximately 20 years.",
+          "C": "Approximately 15 years.",
+          "D": "Approximately 10 years."
+        },
+        "gold_option": "B",
+        "pred_option": null,
+        "detail": "finish_reason=tool_calls without client tools, completion_tokens=3072",
+        "evidence": [
+          "The boat vanished in 1679 —",
+          "Craigshaven was founded under the most peculiar of circumstance in the late 17th century."
+        ],
+        "raw_response": ""
+      },
+      {
+        "id": "530",
+        "type": "multiple_information_retrieval",
+        "context_chars": 138482,
+        "question": "How much younger is DON WARDEN than Porter?",
+        "options": {
+          "A": "Five years younger.",
+          "B": "Two years older.",
+          "C": "Less than one year.",
+          "D": "Ten years younger."
+        },
+        "gold_option": "C",
+        "pred_option": null,
+        "detail": "finish_reason=tool_calls without client tools, completion_tokens=1838",
+        "evidence": [
+          "TV ANNOUNCER?\nNow, here he is... Porter Wagoner!?\nA LIVE STUDIO AUDIENCE erupts for a wiry MAN, 40, blonde hair combed into a pompadour. His Nudie Suit covered in symbols of the Old West -- wagons, cacti -- and studded in sparkling?\nrhinestones. He looks like a mythical figure.?\nThis is PORTER WAGONER.",
+          "That’s DON WARDEN, 40, lead guitarist and loyal sidekick."
+        ],
+        "raw_response": ""
+      }
+    ],
+    "E1_API_TIMEOUT_OR_NET": [
+      {
+        "id": "219",
+        "type": "comprehension_and_reasoning",
+        "context_chars": 151652,
+        "question": "Why does Miles decide to kill Duke?",
+        "options": {
+          "A": "Miles decides to kill Duke because Duke had evidence that could incriminate Miles in another crime, and Miles wanted to eliminate the threat.",
+          "B": "Miles decides to kill Duke in order to frame someone else for Andi's murder and divert suspicion away from himself.",
+          "C": "Miles decides to kill Duke as part of a larger plan to take control of Duke's assets and inherit his wealth.",
+          "D": "Miles decides to kill Duke because Duke saw Miles leaving Andi's house the night she died, so Duke knew Miles was responsible for her death. Duke was threatening to reveal this unless Miles gave him a TV show deal."
+        },
+        "gold_option": "D",
+        "pred_option": null,
+        "detail": "HTTP 502: {\"error\":{\"message\":\"openai_error\",\"type\":\"bad_response_status_code\",\"param\":\"\",\"code\":\"bad_response_status_code\"}}",
+        "evidence": [
+          "\"Duke zipping down the road, he is almost PLOWED OVER by Miles in his distinctive blue Porsche.\"",
+          "\"DUKE Numbers like this, maybe we can talk Alpha News? MILES you bet your ass, come here. Miles at the bar cart, putting ice and whiskey in his glass.\""
+        ],
+        "raw_response": ""
+      },
+      {
+        "id": "238",
+        "type": "comprehension_and_reasoning",
+        "context_chars": 125144,
+        "question": "Why does Gail ultimately decide to leave Ancaster College?",
+        "options": {
+          "A": "Gail ultimately decides to leave Ancaster College because she feels overwhelmed and unable to handle the pressures of her job and personal life.",
+          "B": "Gail ultimately decides to leave Ancaster College because she realizes the deep-rooted racism and oppression at the school will never change, and she can no longer be complicit in sustaining an unjust system.",
+          "C": "Gail ultimately decides to leave Ancaster College because she receives a tempting job offer from another prestigious institution.",
+          "D": "Gail ultimately decides to leave Ancaster College because she discovers a personal conflict with another faculty member that makes it impossible for her to continue working there."
+        },
+        "gold_option": "B",
+        "pred_option": null,
+        "detail": "HTTP 502: {\"error\":{\"message\":\"openai_error\",\"type\":\"bad_response_status_code\",\"param\":\"\",\"code\":\"bad_response_status_code\"}}",
+        "evidence": [
+          "\"I know what happened to Jasmine. If she did all that to herself, I know. I get it. This place oozes hate. It might not be white hoods and minstrels, but it’s there. It’s like a ghost. You can’t catch it, you can’t prove it. And sometimes you just want to have proof.\"",
+          "\"She died. And I could’ve helped her. I could’ve set her free. But I kept her here, because that’s all I knew. That’s what I did, that’s how I got here. But look at me. I was never master. I’m the maid. They brought me here to clean up. I didn’t change anything, I didn’t do anything. I failed her. So now she haunts me. And she will haunt me forever.\""
+        ],
+        "raw_response": ""
+      },
+      {
+        "id": "85",
+        "type": "comprehension_and_reasoning",
+        "context_chars": 99532,
+        "question": "Was Puerta del Sol more important in the 16th century or in the 20th century?",
+        "options": {
+          "A": "In the 16th century.",
+          "B": "There is not enough information to determine its importance in either the 16th or 20th century.",
+          "C": "It was equally important in both the 16th and 20th centuries.",
+          "D": "In the 20th century."
+        },
+        "gold_option": "D",
+        "pred_option": null,
+        "detail": "HTTP 502: {\"error\":{\"message\":\"openai_error\",\"type\":\"bad_response_status_code\",\"param\":\"\",\"code\":\"bad_response_status_code\"}}",
+        "evidence": [
+          "The importance of the Puerta del Sol in the sixteenth century was scarce compared to other areas of Madrid, being more relevant the Plaza del Salvador (predecessor of the Plaza de la Villa), the Puerta de Guadalajara, and especially the Plaza Mayor,[1] as shown in the chronicles of the time.",
+          "The Puerta del Sol gained prominence in 1906, as it was the year of royal weddings: in January the Infanta Maria Teresa married her first cousin Ferdinand of Bavaria. The news of the engagement of Alfonso XIII to Princess Victoria Eugenia of Battenberg (granddaughter of Queen Victoria of England), who in Spain would be known by her first two names: Victoria Eugenia, also reached Madrid."
+        ],
+        "raw_response": ""
+      }
+    ],
+    "E3_THINKING_BUDGET_EXHAUSTION": [
+      {
+        "id": "575",
+        "type": "multiple_information_retrieval",
+        "context_chars": 145434,
+        "question": "How many times does POCKETWATCH appear in the full text?",
+        "options": {
+          "A": "Twice",
+          "B": "Three times",
+          "C": "Five times",
+          "D": "Four times"
+        },
+        "gold_option": "B",
+        "pred_option": null,
+        "detail": "finish_reason=length, completion_tokens=3072, pred=None",
+        "evidence": [
+          "The boy GASPS back to life as a GOLD POCKETWATCH BURSTS OPEN .",
+          "He wiggles his fingers in mock horror, stands and pulls out a POCKETWATCH - the same one from Lucy's dream ."
+        ],
+        "raw_response": ""
+      },
+      {
+        "id": "805",
+        "type": "timeline_reorder",
+        "context_chars": 151005,
+        "question": "Reorder the timeline of below events: \n1.Adam broke his hand. \n2.JR met her pet spider. \n3.Old Adam refused to eat Bonnie's dessert.",
+        "options": {
+          "A": "2,3,1",
+          "B": "1,3,2",
+          "C": "1,2,3",
+          "D": "3,1,2"
+        },
+        "gold_option": "B",
+        "pred_option": null,
+        "detail": "finish_reason=length, completion_tokens=3072, pred=None",
+        "evidence": [
+          "The Pilot trips over his own two feet, stumbling on his way out the door, leaving Bonnie dumbstruck. She turns back to the dishes with an inward sigh --",
+          "THE PILOT\nAll right. You broke your arm on Brad Walden's trampoline when you were six years old. When the doctor set your arm, it left a scar."
+        ],
+        "raw_response": ""
+      }
+    ]
+  }
+}

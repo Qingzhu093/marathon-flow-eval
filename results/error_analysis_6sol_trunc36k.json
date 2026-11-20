@@ -1,0 +1,339 @@
+{
+  "total": 120,
+  "correct": 106,
+  "failed": 14,
+  "accuracy": 0.8833,
+  "failure_categories": {
+    "E7_MULTI_HOP_EVIDENCE_OMISSION": {
+      "count": 4,
+      "pct_of_failures": 0.2857,
+      "pct_of_total": 0.0333
+    },
+    "E6_CROSS_TEXT_COUNTING_CALC_ERROR": {
+      "count": 4,
+      "pct_of_failures": 0.2857,
+      "pct_of_total": 0.0333
+    },
+    "E8_PASSAGE_SUMMARY_MISMATCH": {
+      "count": 3,
+      "pct_of_failures": 0.2143,
+      "pct_of_total": 0.025
+    },
+    "E5_TIMELINE_ORDER_CONFUSION": {
+      "count": 2,
+      "pct_of_failures": 0.1429,
+      "pct_of_total": 0.0167
+    },
+    "E9_LONG_CONTEXT_DISTRACTOR_REASONING": {
+      "count": 1,
+      "pct_of_failures": 0.0714,
+      "pct_of_total": 0.0083
+    }
+  },
+  "failure_by_task": {
+    "comprehension_and_reasoning": {
+      "E7_MULTI_HOP_EVIDENCE_OMISSION": 3,
+      "E9_LONG_CONTEXT_DISTRACTOR_REASONING": 1
+    },
+    "computation": {
+      "E6_CROSS_TEXT_COUNTING_CALC_ERROR": 3
+    },
+    "multiple_information_retrieval": {
+      "E6_CROSS_TEXT_COUNTING_CALC_ERROR": 1,
+      "E7_MULTI_HOP_EVIDENCE_OMISSION": 1
+    },
+    "passage_retrieval": {
+      "E8_PASSAGE_SUMMARY_MISMATCH": 3
+    },
+    "timeline_reorder": {
+      "E5_TIMELINE_ORDER_CONFUSION": 2
+    }
+  },
+  "accuracy_by_length": {
+    "<60k": {
+      "correct": 19,
+      "total": 22,
+      "accuracy": 0.8636
+    },
+    "60k-100k": {
+      "correct": 39,
+      "total": 42,
+      "accuracy": 0.9286
+    },
+    "100k-150k": {
+      "correct": 35,
+      "total": 39,
+      "accuracy": 0.8974
+    },
+    ">=150k": {
+      "correct": 13,
+      "total": 17,
+      "accuracy": 0.7647
+    }
+  },
+  "accuracy_by_evidence_position": {
+    "head(0-0.33)": {
+      "correct": 30,
+      "total": 35,
+      "accuracy": 0.8571
+    },
+    "mid(0.33-0.67)": {
+      "correct": 36,
+      "total": 44,
+      "accuracy": 0.8182
+    },
+    "tail(0.67-1.0)": {
+      "correct": 18,
+      "total": 19,
+      "accuracy": 0.9474
+    }
+  },
+  "representative_examples": {
+    "E7_MULTI_HOP_EVIDENCE_OMISSION": [
+      {
+        "id": "278",
+        "type": "comprehension_and_reasoning",
+        "context_chars": 119908,
+        "question": "How does the text show the Civil War setting of the story from a PADRAIC perspective?",
+        "options": {
+          "A": "From PADRAIC witnessing the firing squad execution and hearing the shots from the mainland.",
+          "B": "From PADRAIC's interaction with the PRIEST in the confessional about the war and the political situation.",
+          "C": "From PADRAIC's conversation with SIOBHAN about the war and the possibility of work in Spain after the war.",
+          "D": "From PADRAIC seeing the newspaper news, seeing the war, talking to DOMINIC about the war, and mentioning that he is going to the execution ground to execute the IRA."
+        },
+        "gold_option": "D",
+        "pred_option": "A",
+        "detail": "pred=A gold=D, ev_count=4, ev_pos=[0.104, 0.133, 0.421]",
+        "evidence": [
+          "SIOBHAN\nAnything in the paper?\nPADRAIC\nJust the civil war still.\nSIOBHAN\nA bad do.",
+          "PADRAIC looks at the FAR-OFF CANNON-FIRE ON THE MAINLAND;\nFLASHES, GUN RETORTS, SMOKE RISING.\nPADRAIC\n(Good luck to ye all. Whatever it is\nye’re fighting about.)"
+        ],
+        "raw_response": "{\"option\":\"A\"}"
+      },
+      {
+        "id": "135",
+        "type": "comprehension_and_reasoning",
+        "context_chars": 88909,
+        "question": "Why is the ship doctor unwilling to go to the missing ship? Does this foreshadow discovering something horrible?",
+        "options": {
+          "A": "The ship doctor is afraid of the dark and unknown, and does not want to explore the deserted ship.",
+          "B": "The ship doctor is worried about being infected by a potential disease on the missing ship, thus avoiding it for personal safety.",
+          "C": "The ship doctor has a premonition of danger and feels an inexplicable sense of dread about going to the missing ship.",
+          "D": "A sign that something terrible may be discovered leading to death."
+        },
+        "gold_option": "D",
+        "pred_option": "B",
+        "detail": "pred=B gold=D, ev_count=5, ev_pos=[0.741, 0.698, 0.746, 0.181, 0.68]",
+        "evidence": [
+          "Fuck me. They sell our ships and this is what they staff them with? .... I... I'm just saying. We have no idea what's awaiting us, and--",
+          "From their reactions, we can tell that not one of them is keen on setting a foot on the Prometheus."
+        ],
+        "raw_response": "{\"option\":\"B\"}"
+      },
+      {
+        "id": "166",
+        "type": "comprehension_and_reasoning",
+        "context_chars": 97937,
+        "question": "The word Weed(s) have been mentioned in 3 times in the script. Which time was the most embarrassing that Alex couldn't save the atmosphere?",
+        "options": {
+          "A": "The fourth time.",
+          "B": "The second time.",
+          "C": "The first time.",
+          "D": "The third time."
+        },
+        "gold_option": "C",
+        "pred_option": "B",
+        "detail": "pred=B gold=C, ev_count=2, ev_pos=[0.242, 0.974]",
+        "evidence": [
+          "ALEX\n(scoffing)\nNo. Daisies are weeds.\nDAISY\nThank you.\nHe has no idea how to save that moment.",
+          "JEFF\nWeeds, huh?\nALEX\nCouldn’t really do roses...\nJeff glances over at Daisy, with the hint of a smile:\nJEFF\nAs it happens, I rather like them.\n(unable to help himself)\nThough keep them separated from the\nrest of the fields.\nLIZ\n(from her flower picking)\nDad, go away!\nHe leaves and Alex turns back to Daisy.\nDAISY\nForever a weed.\nHe reaches out to her again. She hesitates.\nDAISY (CONT’D)\nWhat about Mars?\nHe stops, thinks - he’s got it."
+        ],
+        "raw_response": "{\"option\":\"B\"}"
+      }
+    ],
+    "E9_LONG_CONTEXT_DISTRACTOR_REASONING": [
+      {
+        "id": "215",
+        "type": "comprehension_and_reasoning",
+        "context_chars": 159316,
+        "question": "At the barracks, what did Weaver do to relax?",
+        "options": {
+          "A": "At the barracks, Weaver would engage in meditation to relax.",
+          "B": "At the barracks, Weaver would read a book to relax.",
+          "C": "At the barracks, Weaver would listen to heavy metal music to relax.",
+          "D": "At the barracks, Weaver would practice yoga to relax."
+        },
+        "gold_option": "C",
+        "pred_option": "D",
+        "detail": "pred=D gold=C, ev_pos=[0.181]",
+        "evidence": [
+          "Weaver’s on her bunk -- headphones in -- listening to a SCREAM-O\nHEAVY METAL SONG, while she scrolls photos on her laptop."
+        ],
+        "raw_response": "{\"option\":\"D\"}"
+      }
+    ],
+    "E6_CROSS_TEXT_COUNTING_CALC_ERROR": [
+      {
+        "id": "905",
+        "type": "computation",
+        "context_chars": 64984,
+        "question": "How many documentaries are mentioned in the article?",
+        "options": {
+          "A": "Three.",
+          "B": "Two.",
+          "C": "Four.",
+          "D": "Five."
+        },
+        "gold_option": "A",
+        "pred_option": "B",
+        "detail": "pred=B gold=A, ev_pos=[0.336, 0.674, 0.971]",
+        "evidence": [
+          "1978 – San Francisco PBS station KQED funded and aired a 16-minute documentary by Andrew Welch featuring interviews of gay Mormons in Salt Lake City and Provo and BYU psychologists administering the electroshock aversion therapy program in attempt to make gay students straight.",
+          "1999 – A PBS documentary on the intersection between the Utah Mormon community and homosexuality titled \"Friends and Family: A Community Divided\" aired on Utah's public television."
+        ],
+        "raw_response": "{\"option\":\"B\"}"
+      },
+      {
+        "id": "925",
+        "type": "computation",
+        "context_chars": 222894,
+        "question": "How many years did Elvis perform at the International Hotel in Las Vegas?",
+        "options": {
+          "A": "7 years",
+          "B": "3 years",
+          "C": "5 years",
+          "D": "10 years"
+        },
+        "gold_option": "C",
+        "pred_option": "A",
+        "detail": "pred=A gold=C, ev_pos=[0.756]",
+        "evidence": [
+          "\"Now yours and Mr Hulett’s international tour can’t be nothing less than great. Nothing less than Elvis Presley.\"",
+          "\"SUPERIMPOSED IMAGES: The International sign: 'WELCOME BACK FOR YOUR FIFTH YEAR'.\""
+        ],
+        "raw_response": "{\"option\":\"A\"}"
+      },
+      {
+        "id": "937",
+        "type": "computation",
+        "context_chars": 136718,
+        "question": "How much older is Kiara than Mary?",
+        "options": {
+          "A": "14 years older.",
+          "B": "8 years older.",
+          "C": "10 years older.",
+          "D": "6 years older."
+        },
+        "gold_option": "A",
+        "pred_option": "C",
+        "detail": "pred=C gold=A, ev_pos=[0.016, 0.419]",
+        "evidence": [
+          "His older sister KIARA, (23), JUMPS in and scares him.",
+          "They JUMP to see a black GIRL, (9), hiding behind a tombstone. She's younger, but feels like she could beat them up. There's something dry about her that's oddly comforting."
+        ],
+        "raw_response": "{\"option\":\"C\"}"
+      }
+    ],
+    "E8_PASSAGE_SUMMARY_MISMATCH": [
+      {
+        "id": "1168",
+        "type": "passage_retrieval",
+        "context_chars": 51245,
+        "question": "Which paragraph the following summary corresponds to?\n\"The text highlights multiple visits made by Cohen to Amsterdam during different time periods. In 1964, Cohen visited Amsterdam and befriended writer Simon Vinkenoog, who would later translate Cohen's writings into Dutch. In 1974, Cohen visited again after an unsuccessful visit to Paris and involvement in filmmaker Alejandro Jodorowsky's film Dune. During this visit, he was accompanied by Simon Vinkenoog, poet Louise Landes Levi, and publisher Gerard Bellaart. Cohen's most continuous period in Amsterdam began in 1978 when he met Caroline Gosselin and started the Bandaged Poets project. He also reconnected with Eddie Woods and became a contributing editor for Ins & Outs magazine. Cohen and Gosselin lived in Amsterdam for three years and Cohen made several return visits afterward. Ins & Outs Press produced prints of Cohen's Bandaged Poets photographs and edited his film Kings with Straw Mats. In 1993, Cohen returned to Amsterdam to participate in a tribute to William Burroughs organized by Benn Posset.\"",
+        "options": {
+          "A": "Paragraph 1",
+          "B": "Paragraph 11",
+          "C": "Paragraph 13",
+          "D": "Paragraph 17"
+        },
+        "gold_option": "D",
+        "pred_option": "C",
+        "detail": "pred=C gold=D",
+        "evidence": [
+          "In early 1964, Cohen visited Amsterdam (during the same trip up from Tangier when he arranged for the printing of Gnaoua in Antwerp, Belgium). He befriended writer Simon Vinkenoog, who would later translate many of Cohen's writings into Dutch. Ira was also in Amsterdam in 1974, having visited Paris and the filmmaker Alejandro Jodorowsky with an intention to involve his partner, Petra Vogt, in Jodo"
+        ],
+        "raw_response": "{\"option\":\"C\"}"
+      },
+      {
+        "id": "1212",
+        "type": "passage_retrieval",
+        "context_chars": 52866,
+        "question": "Which paragraph the following summary corresponds to?\n\"The text summarizes the belief in one God, who is the Father Almighty and the creator of all things. It also acknowledges the existence of the only-begotten Son of God, who was born of the Virgin Mary and came down from heaven to destroy sin and death. The Son was crucified, died, and was buried, but rose from the dead on the third day, before ascending into heaven and sitting at the right hand of the Father. The text also mentions the belief in the Holy Spirit, sent by the Son to be a comforter for mankind. The text rejects the term \"substance\" as it is not mentioned in the Scriptures, and condemns any heresies that go against this belief.\"",
+        "options": {
+          "A": "Paragraph 22",
+          "B": "Paragraph 8",
+          "C": "Paragraph 17",
+          "D": "Paragraph 13"
+        },
+        "gold_option": "D",
+        "pred_option": "B",
+        "detail": "pred=B gold=D",
+        "evidence": [
+          "We believe in one God the Father Almighty, of whom are all things. And in the only-begotten Son of God, begotten of God before all ages, and before every beginning; through whom all things visible and invisible were made: who is the only-begotten born of the Father, the only of the only, God of God, similar to the Father who begat him, according to the Scriptures, and whose generation no one knows"
+        ],
+        "raw_response": "{\"option\":\"B\"}"
+      },
+      {
+        "id": "1244",
+        "type": "passage_retrieval",
+        "context_chars": 49591,
+        "question": "Which paragraph the following summary corresponds to?\n\"The Newcomb Lifeboat Company, founded by A.D. Newcomb, designed an enclosed lifeboat that provided compressed oxygen to occupants. In 1916, the company was incorporated in Richmond, Virginia. Shortly before the United States declared war on Germany in 1917, Congress allocated funds for the war effort, including the purchase of torpedo boat destroyers. The Newcomb Lifeboat Company agreed to build five SC-1-class submarine chasers. Due to insufficient space, the company acquired the facilities of Chesapeake Gas Engine Corporation in Hampton, Virginia. They also secured a contract to build cargo ships and increased employment at the yard. In April 1918, the company changed its name to The Hampton Shipbuilding & Marine Railway Corp. By 1918, the submarine chasers were completed, and the shipyard was taken over by Charles H. Tenney & Company. However, the Armistice of 1918 resulted in the cancellation of the contract for cargo ships. The shipyard sold two completed ships and discarded the third. The shipyard was then sold at auction in April 1921.\"",
+        "options": {
+          "A": "Paragraph 18",
+          "B": "Paragraph 8",
+          "C": "Paragraph 11",
+          "D": "Paragraph 13"
+        },
+        "gold_option": "D",
+        "pred_option": "A",
+        "detail": "pred=A gold=D",
+        "evidence": [
+          "The founder, A. D. Newcomb, designed a lifeboat that was completely enclosed and sealed with the occupants receiving air through compressed oxygen tanks. In February 1916, the Newcomb Lifeboat Company was incorporated in Richmond, Virginia. Several days prior to the official declaration of war against Germany in March 1917, the US Congress voted $115,000,000 for the war effort including the purcha"
+        ],
+        "raw_response": "{\"option\":\"A\"}"
+      }
+    ],
+    "E5_TIMELINE_ORDER_CONFUSION": [
+      {
+        "id": "805",
+        "type": "timeline_reorder",
+        "context_chars": 151005,
+        "question": "Reorder the timeline of below events: \n1.Adam broke his hand. \n2.JR met her pet spider. \n3.Old Adam refused to eat Bonnie's dessert.",
+        "options": {
+          "A": "2,3,1",
+          "B": "1,3,2",
+          "C": "1,2,3",
+          "D": "3,1,2"
+        },
+        "gold_option": "B",
+        "pred_option": "D",
+        "detail": "pred=D gold=B, ev_pos=[0.247, 0.268, 0.535]",
+        "evidence": [
+          "The Pilot trips over his own two feet, stumbling on his way out the door, leaving Bonnie dumbstruck. She turns back to the dishes with an inward sigh --",
+          "THE PILOT\nAll right. You broke your arm on Brad Walden's trampoline when you were six years old. When the doctor set your arm, it left a scar."
+        ],
+        "raw_response": "{\"option\":\"D\"}"
+      },
+      {
+        "id": "812",
+        "type": "timeline_reorder",
+        "context_chars": 151601,
+        "question": "Reorder the timeline of below events: \n1.The Robert-Houdin machine was burned. \n2.Harry sneaks into the BALLANTINE ESTATE. \n3.Harry finds the hidden PUZZLE BOX.\n4.Harry was caught peeking into Crane's conversation.",
+        "options": {
+          "A": "4,3,2,1",
+          "B": "2,4,3,1",
+          "C": "4,2,3,1",
+          "D": "2,3,4,1"
+        },
+        "gold_option": "A",
+        "pred_option": "C",
+        "detail": "pred=C gold=A, ev_pos=[0.141, 0.249, 0.275, 0.927]",
+        "evidence": [
+          "CLANG!?\nCrane WHIPS AROUND, catching Harry spying on them.?\nHarry tries to scamper away, but Crane crosses the shop in a few brief strides, GRABBING Harry by the scruff of the neck and DRAGGING him down out of the loft.",
+          "He turns back to the workbench. Something GLINTS beneath the pile of greasy locks -- Harry SHOVES them aside. They CLATTER to the floor, revealing --THE PUZZLE BOX."
+        ],
+        "raw_response": "{\"option\":\"C\"}"
+      }
+    ]
+  }
+}
