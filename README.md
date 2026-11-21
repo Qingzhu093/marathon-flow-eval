@@ -2,6 +2,10 @@
 
 马照新（智能体编排组 · 论文方向）的第 3 轮实验代码与数据记录，目标数据集为 `Marathon`（ACL 2024）。
 
+## 核心结果总览
+
+![Marathon 6 类子任务准确率对比](figures/1_accuracy_comparison.png)
+
 ## 目录说明
 
 - `data/`
