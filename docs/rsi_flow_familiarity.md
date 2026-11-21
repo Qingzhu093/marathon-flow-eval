@@ -29,6 +29,17 @@
 
 ## 4. 把 Marathon 分段取证流程写成 `rsi-flow` JSON
 
+```mermaid
+flowchart TD
+    S(["start: context, question, options"]) --> N1["NODE_CHUNK_SPLIT (判断长度并按段落边界切分)"]
+    N1 -->|"needChunking == 0 (<=36K)"| N2["NODE_DIRECT_SOLVE (短文本直接求解)"]
+    N1 -->|"needChunking == 1 (>36K)"| F1["FLOW_MAP_EVIDENCE (async-all 并行分块抽取证据)"]
+    F1 --> C1["Chunk 1..K (<=32K, 重叠 1.2K)"]
+    C1 --> N3["NODE_REDUCE_VERIFY (按序汇总证据并核验选项)"]
+    N2 --> E(["end: finalOption"])
+    N3 --> E
+```
+
 对照这周改出来的 Map-Reduce + 校验流程，映射成 `rsi-flow` 的 JSON 大概是这样：
 
 ```json

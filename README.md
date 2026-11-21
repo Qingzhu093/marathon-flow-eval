@@ -6,6 +6,26 @@
 
 ![Marathon 6 类子任务准确率对比](figures/1_accuracy_comparison.png)
 
+## 编排工作流结构（对应 `rsi-flow`）
+
+```mermaid
+flowchart TD
+    S(["start: context, question, options"]) --> N1["NODE_CHUNK_SPLIT (判断长度并按段落边界切分)"]
+    N1 -->|"needChunking == 0 (<=36K)"| N2["NODE_DIRECT_SOLVE (短文本直接求解)"]
+    N1 -->|"needChunking == 1 (>36K)"| F1["FLOW_MAP_EVIDENCE (async-all 并行分块抽取证据)"]
+    F1 --> C1["Chunk 1 (<=32K)"]
+    F1 --> C2["Chunk 2 (<=32K)"]
+    F1 --> C3["Chunk K (<=32K)"]
+    C1 --> N3["NODE_REDUCE_VERIFY (按序汇总证据并核验选项)"]
+    C2 --> N3
+    C3 --> N3
+    N2 --> V{"JSON 校验分支"}
+    N3 --> V
+    V -->|"解析成功"| E(["end: finalOption"])
+    V -->|"格式异常"| R["NODE_FORMAT_REPAIR (单次格式纠偏)"]
+    R --> E
+```
+
 ## 目录说明
 
 - `data/`
